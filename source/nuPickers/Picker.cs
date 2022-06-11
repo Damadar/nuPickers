@@ -101,10 +101,10 @@ namespace nuPickers
         /// <param name="dataTypeId">the dataType id of this picker</param>
         /// <param name="propertyEditorAlias">the alias of the dataType</param>
         /// <param name="savedValue">the actual value saved</param>
-        internal Picker(int contextId, int parentId, string propertyAlias, int dataTypeId, string propertyEditorAlias, object savedValue)
+        internal Picker(int contextId, int? parentId, string propertyAlias, int dataTypeId, string propertyEditorAlias, object savedValue)
         {
             this.ContextId = contextId;
-            this.ParentId = parentId;
+            this.ParentId = parentId == null ? -1 : (int)parentId;
             this.PropertyAlias = propertyAlias;
             this.DataTypeId = dataTypeId;
             this.PropertyEditorAlias = propertyEditorAlias;
