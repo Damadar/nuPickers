@@ -104,7 +104,7 @@ namespace nuPickers
         internal Picker(int contextId, int? parentId, string propertyAlias, int dataTypeId, string propertyEditorAlias, object savedValue)
         {
             this.ContextId = contextId;
-            this.ParentId = parentId == null ? -1 : (int)parentId;
+            this.ParentId = (parentId != null) ? (int)parentId : -1;
             this.PropertyAlias = propertyAlias;
             this.DataTypeId = dataTypeId;
             this.PropertyEditorAlias = propertyEditorAlias;
